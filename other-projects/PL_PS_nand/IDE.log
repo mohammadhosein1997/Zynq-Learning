@@ -1,0 +1,814 @@
+19:51:37 INFO  : Launching XSCT server: xsct -n  -interactive /home/zynq-user/Industri-University_Course/PL_PS_nand/temp_xsdb_launch_script.tcl
+19:51:37 INFO  : Platform repository initialization has completed.
+19:51:38 INFO  : Registering command handlers for Vitis TCF services
+19:51:41 INFO  : XSCT server has started successfully.
+19:51:41 INFO  : plnx-install-location is set to ''
+19:51:41 INFO  : Successfully done setting XSCT server connection channel  
+19:51:42 INFO  : Successfully done setting workspace for the tool. 
+19:51:42 INFO  : Successfully done query RDI_DATADIR 
+19:53:04 INFO  : Result from executing command 'getProjects': PL_PS_nand_wrapper
+19:53:04 INFO  : Result from executing command 'getPlatforms': 
+19:53:04 WARN  : An unexpected exception occurred in the module 'platform project logging'
+19:53:05 INFO  : Platform 'PL_PS_nand_wrapper' is added to custom repositories.
+19:53:14 INFO  : Platform 'PL_PS_nand_wrapper' is added to custom repositories.
+20:04:23 INFO  : Result from executing command 'getProjects': PL_PS_nand_wrapper
+20:04:23 INFO  : Result from executing command 'getPlatforms': PL_PS_nand_wrapper|/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/PL_PS_nand_wrapper.xpfm
+20:04:26 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:04:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:04:35 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:04:35 INFO  : 'jtag frequency' command is executed.
+20:04:35 INFO  : Context for 'APU' is selected.
+20:04:35 INFO  : System reset is completed.
+20:04:38 INFO  : 'after 3000' command is executed.
+20:04:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:04:40 ERROR : 'fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit' is cancelled.
+20:04:40 ERROR : Exception occured while running Program Device.
+java.lang.RuntimeException: 'fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit' is cancelled.
+20:04:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+----------------End of Script----------------
+
+20:04:40 ERROR : 'fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit' is cancelled.
+20:04:50 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:04:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:04:57 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:04:57 INFO  : 'jtag frequency' command is executed.
+20:04:57 INFO  : Context for 'APU' is selected.
+20:04:57 INFO  : System reset is completed.
+20:05:00 INFO  : 'after 3000' command is executed.
+20:05:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:05:03 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:05:03 INFO  : Context for 'APU' is selected.
+20:05:03 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:05:03 INFO  : 'configparams force-mem-access 1' command is executed.
+20:05:03 INFO  : Context for 'APU' is selected.
+20:05:03 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:05:03 INFO  : 'ps7_init' command is executed.
+20:05:03 INFO  : 'ps7_post_config' command is executed.
+20:05:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:05:03 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:05:03 INFO  : 'configparams force-mem-access 0' command is executed.
+20:05:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:05:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:05:03 INFO  : 'con' command is executed.
+20:05:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:05:03 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:08:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:08:10 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:08:10 INFO  : 'jtag frequency' command is executed.
+20:08:10 INFO  : Context for 'APU' is selected.
+20:08:10 INFO  : System reset is completed.
+20:08:13 INFO  : 'after 3000' command is executed.
+20:08:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:08:16 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:08:16 INFO  : Context for 'APU' is selected.
+20:08:16 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:08:16 INFO  : 'configparams force-mem-access 1' command is executed.
+20:08:16 INFO  : Context for 'APU' is selected.
+20:08:16 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:08:16 INFO  : 'ps7_init' command is executed.
+20:08:16 INFO  : 'ps7_post_config' command is executed.
+20:08:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:16 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:08:16 INFO  : 'configparams force-mem-access 0' command is executed.
+20:08:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:08:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:08:17 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:08:17 INFO  : 'jtag frequency' command is executed.
+20:08:17 INFO  : Context for 'APU' is selected.
+20:08:17 INFO  : System reset is completed.
+20:08:20 INFO  : 'after 3000' command is executed.
+20:08:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:08:23 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:08:23 INFO  : Context for 'APU' is selected.
+20:08:23 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:08:23 INFO  : 'configparams force-mem-access 1' command is executed.
+20:08:23 INFO  : Context for 'APU' is selected.
+20:08:23 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:08:23 INFO  : 'ps7_init' command is executed.
+20:08:23 INFO  : 'ps7_post_config' command is executed.
+20:08:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:23 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:08:23 INFO  : 'configparams force-mem-access 0' command is executed.
+20:08:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:08:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:23 INFO  : 'con' command is executed.
+20:08:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:08:23 INFO  : Disconnected from the channel tcfchan#2.
+20:10:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:10:04 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:10:04 INFO  : 'jtag frequency' command is executed.
+20:10:04 INFO  : Context for 'APU' is selected.
+20:10:05 INFO  : System reset is completed.
+20:10:08 INFO  : 'after 3000' command is executed.
+20:10:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:10:10 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:10:10 INFO  : Context for 'APU' is selected.
+20:10:10 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:10:10 INFO  : 'configparams force-mem-access 1' command is executed.
+20:10:10 INFO  : Context for 'APU' is selected.
+20:10:10 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:10:10 INFO  : 'ps7_init' command is executed.
+20:10:10 INFO  : 'ps7_post_config' command is executed.
+20:10:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:10 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:10:10 INFO  : 'configparams force-mem-access 0' command is executed.
+20:10:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:10:15 INFO  : Disconnected from the channel tcfchan#3.
+20:10:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:10:16 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:10:16 INFO  : 'jtag frequency' command is executed.
+20:10:16 INFO  : Context for 'APU' is selected.
+20:10:16 INFO  : System reset is completed.
+20:10:19 INFO  : 'after 3000' command is executed.
+20:10:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:10:21 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:10:21 INFO  : Context for 'APU' is selected.
+20:10:21 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:10:21 INFO  : 'configparams force-mem-access 1' command is executed.
+20:10:21 INFO  : Context for 'APU' is selected.
+20:10:21 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:10:22 INFO  : 'ps7_init' command is executed.
+20:10:22 INFO  : 'ps7_post_config' command is executed.
+20:10:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:22 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:10:22 INFO  : 'configparams force-mem-access 0' command is executed.
+20:10:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:10:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:22 INFO  : 'con' command is executed.
+20:10:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:10:22 INFO  : Disconnected from the channel tcfchan#4.
+20:12:46 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:12:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:12:58 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:12:58 INFO  : 'jtag frequency' command is executed.
+20:12:58 INFO  : Context for 'APU' is selected.
+20:12:58 INFO  : System reset is completed.
+20:13:01 INFO  : 'after 3000' command is executed.
+20:13:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:13:04 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:13:04 INFO  : Context for 'APU' is selected.
+20:13:04 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:13:04 INFO  : 'configparams force-mem-access 1' command is executed.
+20:13:04 INFO  : Context for 'APU' is selected.
+20:13:04 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:13:04 INFO  : 'ps7_init' command is executed.
+20:13:04 INFO  : 'ps7_post_config' command is executed.
+20:13:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:13:04 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:13:04 INFO  : 'configparams force-mem-access 0' command is executed.
+20:13:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:13:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:13:04 INFO  : 'con' command is executed.
+20:13:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:13:04 INFO  : Disconnected from the channel tcfchan#5.
+20:15:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:15:08 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:15:08 INFO  : 'jtag frequency' command is executed.
+20:15:08 INFO  : Context for 'APU' is selected.
+20:15:09 INFO  : System reset is completed.
+20:15:12 INFO  : 'after 3000' command is executed.
+20:15:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:15:14 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:15:14 INFO  : Context for 'APU' is selected.
+20:15:14 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:15:14 INFO  : 'configparams force-mem-access 1' command is executed.
+20:15:14 INFO  : Context for 'APU' is selected.
+20:15:14 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:15:14 INFO  : 'ps7_init' command is executed.
+20:15:14 INFO  : 'ps7_post_config' command is executed.
+20:15:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:15:14 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:15:14 INFO  : 'configparams force-mem-access 0' command is executed.
+20:15:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:15:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:15:15 INFO  : 'con' command is executed.
+20:15:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:15:15 INFO  : Disconnected from the channel tcfchan#6.
+20:15:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:15:52 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:15:52 INFO  : 'jtag frequency' command is executed.
+20:15:52 INFO  : Context for 'APU' is selected.
+20:15:52 INFO  : System reset is completed.
+20:15:55 INFO  : 'after 3000' command is executed.
+20:15:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:15:57 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:15:57 INFO  : Context for 'APU' is selected.
+20:15:57 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:15:57 INFO  : 'configparams force-mem-access 1' command is executed.
+20:15:57 INFO  : Context for 'APU' is selected.
+20:15:57 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:15:57 INFO  : 'ps7_init' command is executed.
+20:15:57 INFO  : 'ps7_post_config' command is executed.
+20:15:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:15:58 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:15:58 INFO  : 'configparams force-mem-access 0' command is executed.
+20:15:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:17:35 INFO  : Disconnected from the channel tcfchan#7.
+20:17:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:17:36 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:17:36 INFO  : 'jtag frequency' command is executed.
+20:17:36 INFO  : Context for 'APU' is selected.
+20:17:36 INFO  : System reset is completed.
+20:17:39 INFO  : 'after 3000' command is executed.
+20:17:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:17:41 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:17:41 INFO  : Context for 'APU' is selected.
+20:17:41 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:17:41 INFO  : 'configparams force-mem-access 1' command is executed.
+20:17:41 INFO  : Context for 'APU' is selected.
+20:17:41 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:17:42 INFO  : 'ps7_init' command is executed.
+20:17:42 INFO  : 'ps7_post_config' command is executed.
+20:17:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:17:42 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:17:42 INFO  : 'configparams force-mem-access 0' command is executed.
+20:17:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:17:48 INFO  : Disconnected from the channel tcfchan#8.
+20:20:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:20:08 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:20:08 INFO  : 'jtag frequency' command is executed.
+20:20:08 INFO  : Context for 'APU' is selected.
+20:20:08 INFO  : System reset is completed.
+20:20:11 INFO  : 'after 3000' command is executed.
+20:20:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:20:13 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:20:13 INFO  : Context for 'APU' is selected.
+20:20:13 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:20:13 INFO  : 'configparams force-mem-access 1' command is executed.
+20:20:13 INFO  : Context for 'APU' is selected.
+20:20:13 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:20:14 INFO  : 'ps7_init' command is executed.
+20:20:14 INFO  : 'ps7_post_config' command is executed.
+20:20:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:14 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:20:14 INFO  : 'configparams force-mem-access 0' command is executed.
+20:20:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:20:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:14 ERROR : Already running
+20:20:30 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:20:45 WARN  : channel "tcfchan#2" closed
+20:20:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:20:46 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:20:46 INFO  : 'jtag frequency' command is executed.
+20:20:46 INFO  : Context for 'APU' is selected.
+20:20:46 INFO  : System reset is completed.
+20:20:49 INFO  : 'after 3000' command is executed.
+20:20:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:20:51 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:20:51 INFO  : Context for 'APU' is selected.
+20:20:51 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:20:51 INFO  : 'configparams force-mem-access 1' command is executed.
+20:20:51 INFO  : Context for 'APU' is selected.
+20:20:51 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:20:51 INFO  : 'ps7_init' command is executed.
+20:20:52 INFO  : 'ps7_post_config' command is executed.
+20:20:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:52 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:20:52 INFO  : 'configparams force-mem-access 0' command is executed.
+20:20:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:20:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:52 INFO  : 'con' command is executed.
+20:20:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:20:52 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:22:29 INFO  : Disconnected from the channel tcfchan#9.
+20:22:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:22:30 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:22:30 INFO  : 'jtag frequency' command is executed.
+20:22:30 INFO  : Context for 'APU' is selected.
+20:22:30 INFO  : System reset is completed.
+20:22:33 INFO  : 'after 3000' command is executed.
+20:22:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:22:35 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:22:35 INFO  : Context for 'APU' is selected.
+20:22:35 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:22:35 INFO  : 'configparams force-mem-access 1' command is executed.
+20:22:35 INFO  : Context for 'APU' is selected.
+20:22:35 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:22:36 INFO  : 'ps7_init' command is executed.
+20:22:36 INFO  : 'ps7_post_config' command is executed.
+20:22:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:36 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:22:36 INFO  : 'configparams force-mem-access 0' command is executed.
+20:22:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:22:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:36 INFO  : 'con' command is executed.
+20:22:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:22:36 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:23:51 INFO  : Disconnected from the channel tcfchan#10.
+20:23:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:23:52 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:23:52 INFO  : 'jtag frequency' command is executed.
+20:23:52 INFO  : Context for 'APU' is selected.
+20:23:52 INFO  : System reset is completed.
+20:23:55 INFO  : 'after 3000' command is executed.
+20:23:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:23:58 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:23:58 INFO  : Context for 'APU' is selected.
+20:23:58 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:23:58 INFO  : 'configparams force-mem-access 1' command is executed.
+20:23:58 INFO  : Context for 'APU' is selected.
+20:23:58 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:23:58 INFO  : 'ps7_init' command is executed.
+20:23:58 INFO  : 'ps7_post_config' command is executed.
+20:23:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:23:58 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:23:58 INFO  : 'configparams force-mem-access 0' command is executed.
+20:23:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:23:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:23:58 INFO  : 'con' command is executed.
+20:23:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:23:58 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:25:40 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:25:46 INFO  : Disconnected from the channel tcfchan#11.
+20:25:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:25:47 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:25:48 INFO  : 'jtag frequency' command is executed.
+20:25:48 INFO  : Context for 'APU' is selected.
+20:25:48 INFO  : System reset is completed.
+20:25:51 INFO  : 'after 3000' command is executed.
+20:25:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:25:53 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:25:53 INFO  : Context for 'APU' is selected.
+20:25:53 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:25:53 INFO  : 'configparams force-mem-access 1' command is executed.
+20:25:53 INFO  : Context for 'APU' is selected.
+20:25:53 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:25:53 INFO  : 'ps7_init' command is executed.
+20:25:53 INFO  : 'ps7_post_config' command is executed.
+20:25:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:53 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:25:53 INFO  : 'configparams force-mem-access 0' command is executed.
+20:25:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:25:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:54 INFO  : 'con' command is executed.
+20:25:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:25:54 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:26:37 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:26:48 INFO  : Disconnected from the channel tcfchan#12.
+20:26:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:26:58 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:26:58 INFO  : 'jtag frequency' command is executed.
+20:26:58 INFO  : Context for 'APU' is selected.
+20:26:58 INFO  : System reset is completed.
+20:27:01 INFO  : 'after 3000' command is executed.
+20:27:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:27:03 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:27:03 INFO  : Context for 'APU' is selected.
+20:27:03 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:27:03 INFO  : 'configparams force-mem-access 1' command is executed.
+20:27:03 INFO  : Context for 'APU' is selected.
+20:27:03 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:27:03 INFO  : 'ps7_init' command is executed.
+20:27:03 INFO  : 'ps7_post_config' command is executed.
+20:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:27:04 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:27:04 INFO  : 'configparams force-mem-access 0' command is executed.
+20:27:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:27:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:27:04 INFO  : 'con' command is executed.
+20:27:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:27:04 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+20:27:30 ERROR : Error while launch xterm: {}
+java.io.IOException: Cannot run program "xterm" (in directory "/home/zynq-user/Industri-University_Course/PL_PS_nand"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.xilinx.ide.tools.console.OpenXBashHandler$1.run(OpenXBashHandler.java:99)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4930)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4451)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at com.xilinx.ide.application.ui.Application.start(Application.java:80)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 28 more
+20:27:30 ERROR : Error while launch konsole: {}
+java.io.IOException: Cannot run program "konsole" (in directory "/home/zynq-user/Industri-University_Course/PL_PS_nand"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.xilinx.ide.tools.console.OpenXBashHandler$1.run(OpenXBashHandler.java:109)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4930)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4451)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at com.xilinx.ide.application.ui.Application.start(Application.java:80)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 28 more
+20:31:33 INFO  : Checking for BSP changes to sync application flags for project 'PL_PS_not'...
+20:31:39 INFO  : Disconnected from the channel tcfchan#13.
+20:31:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:31:41 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+20:31:41 INFO  : 'jtag frequency' command is executed.
+20:31:41 INFO  : Context for 'APU' is selected.
+20:31:41 INFO  : System reset is completed.
+20:31:44 INFO  : 'after 3000' command is executed.
+20:31:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+20:31:46 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit"
+20:31:46 INFO  : Context for 'APU' is selected.
+20:31:46 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa'.
+20:31:46 INFO  : 'configparams force-mem-access 1' command is executed.
+20:31:46 INFO  : Context for 'APU' is selected.
+20:31:46 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl' is done.
+20:31:46 INFO  : 'ps7_init' command is executed.
+20:31:46 INFO  : 'ps7_post_config' command is executed.
+20:31:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:31:47 INFO  : The application '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:31:47 INFO  : 'configparams force-mem-access 0' command is executed.
+20:31:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/bitstream/PL_PS_nand_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_nand_wrapper/export/PL_PS_nand_wrapper/hw/PL_PS_nand_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not/Debug/PL_PS_not.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:31:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:31:47 INFO  : 'con' command is executed.
+20:31:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:31:47 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/PL_PS_nand/PL_PS_not_system/_ide/scripts/debugger_pl_ps_not-default.tcl'
+21:10:26 INFO  : Disconnected from the channel tcfchan#14.
+10:36:03 INFO  : Launching XSCT server: xsct -n  -interactive /home/zynq-user/Industri-University_Course/PL_PS_nand/temp_xsdb_launch_script.tcl
+10:36:09 INFO  : Platform repository initialization has completed.
+10:36:10 INFO  : Registering command handlers for Vitis TCF services
+10:36:12 INFO  : XSCT server has started successfully.
+10:36:12 INFO  : Successfully done setting XSCT server connection channel  
+10:36:13 INFO  : Successfully done setting workspace for the tool. 
+10:36:13 INFO  : plnx-install-location is set to ''
+10:36:13 INFO  : Successfully done query RDI_DATADIR 

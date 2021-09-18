@@ -1,0 +1,33 @@
+/*
+ * input: a single bit from the PL side
+ * output: a single bit to the PL side which is the not of the input
+ */
+
+#include <stdio.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xgpio.h"
+
+
+
+int main()
+{
+    init_platform();
+    int din, dout;
+
+    XGpio input, output;
+    XGpio_Initialize(&input, XPAR_AXI_GPIO_0_DEVICE_ID);
+    XGpio_SetDataDirection(&input, 1, 1); // 1 for input
+    XGpio_Initialize(&output, XPAR_AXI_GPIO_1_DEVICE_ID);
+    XGpio_SetDataDirection(&output, 1, 0); // 0 for outputs
+
+
+
+    while(1)
+    {
+    	din = XGpio_DiscreteRead(&input, 1);
+    	dout = not din;
+    }
+    cleanup_platform();
+    return 0;
+}

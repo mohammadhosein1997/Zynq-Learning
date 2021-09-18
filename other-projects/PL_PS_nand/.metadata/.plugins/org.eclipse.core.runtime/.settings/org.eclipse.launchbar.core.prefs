@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_PL_PS_not_system,org.eclipse.launchbar.core.descriptorType.default\:Debugger_PL_PS_not-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_PL_PS_not-Default
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_PL_PS_not-Default/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_PL_PS_not-GDB/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_PL_PS_not_system/activeLaunchMode=systemrun
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_PL_PS_not_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
