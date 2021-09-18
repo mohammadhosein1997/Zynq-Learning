@@ -1,0 +1,736 @@
+11:29:17 INFO  : Platform repository initialization has completed.
+11:29:17 INFO  : Launching XSCT server: xsct -n  -interactive /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/temp_xsdb_launch_script.tcl
+11:29:17 INFO  : Registering command handlers for Vitis TCF services
+11:29:20 INFO  : XSCT server has started successfully.
+11:29:20 INFO  : Successfully done setting XSCT server connection channel  
+11:29:20 INFO  : plnx-install-location is set to ''
+11:29:20 INFO  : Successfully done setting workspace for the tool. 
+11:29:20 INFO  : Successfully done query RDI_DATADIR 
+11:30:34 INFO  : Result from executing command 'getProjects': zynqbook_chapter2
+11:30:34 INFO  : Result from executing command 'getPlatforms': 
+11:30:34 WARN  : An unexpected exception occurred in the module 'platform project logging'
+11:30:34 INFO  : Platform 'zynqbook_chapter2' is added to custom repositories.
+11:30:43 INFO  : Platform 'zynqbook_chapter2' is added to custom repositories.
+11:32:33 INFO  : Result from executing command 'getProjects': zynqbook_chapter2
+11:32:33 INFO  : Result from executing command 'getPlatforms': zynqbook_chapter2|/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/zynqbook_chapter2.xpfm
+11:32:36 INFO  : Checking for BSP changes to sync application flags for project 'zynqbook_chapter2_app'...
+11:33:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:33:53 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+11:33:53 INFO  : 'jtag frequency' command is executed.
+11:33:53 INFO  : Context for 'APU' is selected.
+11:33:53 INFO  : System reset is completed.
+11:33:56 INFO  : 'after 3000' command is executed.
+11:33:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+11:33:59 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+11:33:59 INFO  : Context for 'APU' is selected.
+11:33:59 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+11:33:59 INFO  : 'configparams force-mem-access 1' command is executed.
+11:33:59 INFO  : Context for 'APU' is selected.
+11:33:59 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+11:33:59 INFO  : 'ps7_init' command is executed.
+11:33:59 INFO  : 'ps7_post_config' command is executed.
+11:33:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:59 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:34:00 INFO  : 'configparams force-mem-access 0' command is executed.
+11:34:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:34:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:34:00 INFO  : 'con' command is executed.
+11:34:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:34:00 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:05:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:41 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:05:41 INFO  : 'jtag frequency' command is executed.
+12:05:41 INFO  : Context for 'APU' is selected.
+12:05:41 INFO  : System reset is completed.
+12:05:44 INFO  : 'after 3000' command is executed.
+12:05:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:05:47 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:05:47 INFO  : Context for 'APU' is selected.
+12:05:47 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:05:47 INFO  : 'configparams force-mem-access 1' command is executed.
+12:05:47 INFO  : Context for 'APU' is selected.
+12:05:47 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:05:47 INFO  : 'ps7_init' command is executed.
+12:05:47 INFO  : 'ps7_post_config' command is executed.
+12:05:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:47 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:05:47 INFO  : 'configparams force-mem-access 0' command is executed.
+12:05:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:05:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:47 INFO  : 'con' command is executed.
+12:05:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:05:47 INFO  : Disconnected from the channel tcfchan#2.
+12:18:45 INFO  : Checking for BSP changes to sync application flags for project 'zynqbook_chapter2_app'...
+12:19:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:19:21 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:19:21 INFO  : 'jtag frequency' command is executed.
+12:19:21 INFO  : Context for 'APU' is selected.
+12:19:21 INFO  : System reset is completed.
+12:19:24 INFO  : 'after 3000' command is executed.
+12:19:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:19:27 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:19:27 INFO  : Context for 'APU' is selected.
+12:19:27 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:19:27 INFO  : 'configparams force-mem-access 1' command is executed.
+12:19:27 INFO  : Context for 'APU' is selected.
+12:19:27 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:19:27 INFO  : 'ps7_init' command is executed.
+12:19:27 INFO  : 'ps7_post_config' command is executed.
+12:19:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:19:27 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:19:27 INFO  : 'configparams force-mem-access 0' command is executed.
+12:19:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:21:38 WARN  : channel "tcfchan#2" closed
+12:21:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:21:39 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:21:39 INFO  : 'jtag frequency' command is executed.
+12:21:39 INFO  : Context for 'APU' is selected.
+12:21:39 INFO  : System reset is completed.
+12:21:42 INFO  : 'after 3000' command is executed.
+12:21:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:21:45 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:21:45 INFO  : Context for 'APU' is selected.
+12:21:45 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:21:45 INFO  : 'configparams force-mem-access 1' command is executed.
+12:21:45 INFO  : Context for 'APU' is selected.
+12:21:45 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:21:45 INFO  : 'ps7_init' command is executed.
+12:21:45 INFO  : 'ps7_post_config' command is executed.
+12:21:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:21:45 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:21:45 INFO  : 'configparams force-mem-access 0' command is executed.
+12:21:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:21:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:21:45 INFO  : 'con' command is executed.
+12:21:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:21:45 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:22:59 INFO  : Disconnected from the channel tcfchan#3.
+12:23:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:23:33 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:23:33 INFO  : 'jtag frequency' command is executed.
+12:23:33 INFO  : Context for 'APU' is selected.
+12:23:33 INFO  : System reset is completed.
+12:23:36 INFO  : 'after 3000' command is executed.
+12:23:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:23:39 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:23:39 INFO  : Context for 'APU' is selected.
+12:23:39 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:23:39 INFO  : 'configparams force-mem-access 1' command is executed.
+12:23:39 INFO  : Context for 'APU' is selected.
+12:23:39 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:23:39 INFO  : 'ps7_init' command is executed.
+12:23:39 INFO  : 'ps7_post_config' command is executed.
+12:23:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:23:39 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:23:39 INFO  : 'configparams force-mem-access 0' command is executed.
+12:23:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:23:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:23:39 INFO  : 'con' command is executed.
+12:23:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:23:39 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:24:08 INFO  : Disconnected from the channel tcfchan#4.
+12:24:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:24:09 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:24:09 INFO  : 'jtag frequency' command is executed.
+12:24:09 INFO  : Context for 'APU' is selected.
+12:24:09 INFO  : System reset is completed.
+12:24:12 INFO  : 'after 3000' command is executed.
+12:24:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:24:15 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:24:15 INFO  : Context for 'APU' is selected.
+12:24:15 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:24:15 INFO  : 'configparams force-mem-access 1' command is executed.
+12:24:15 INFO  : Context for 'APU' is selected.
+12:24:15 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:24:15 INFO  : 'ps7_init' command is executed.
+12:24:15 INFO  : 'ps7_post_config' command is executed.
+12:24:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:15 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:24:15 INFO  : 'configparams force-mem-access 0' command is executed.
+12:24:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:24:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:15 INFO  : 'con' command is executed.
+12:24:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:24:15 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:24:44 INFO  : Disconnected from the channel tcfchan#5.
+12:24:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:24:45 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:24:45 INFO  : 'jtag frequency' command is executed.
+12:24:45 INFO  : Context for 'APU' is selected.
+12:24:45 INFO  : System reset is completed.
+12:24:48 INFO  : 'after 3000' command is executed.
+12:24:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:24:50 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:24:50 INFO  : Context for 'APU' is selected.
+12:24:50 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:24:50 INFO  : 'configparams force-mem-access 1' command is executed.
+12:24:50 INFO  : Context for 'APU' is selected.
+12:24:50 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:24:51 INFO  : 'ps7_init' command is executed.
+12:24:51 INFO  : 'ps7_post_config' command is executed.
+12:24:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:51 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:24:51 INFO  : 'configparams force-mem-access 0' command is executed.
+12:24:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:24:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:51 INFO  : 'con' command is executed.
+12:24:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:24:51 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:25:22 INFO  : Disconnected from the channel tcfchan#6.
+12:25:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:25:24 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:25:24 INFO  : 'jtag frequency' command is executed.
+12:25:24 INFO  : Context for 'APU' is selected.
+12:25:24 INFO  : System reset is completed.
+12:25:27 INFO  : 'after 3000' command is executed.
+12:25:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:25:29 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:25:29 INFO  : Context for 'APU' is selected.
+12:25:29 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:25:29 INFO  : 'configparams force-mem-access 1' command is executed.
+12:25:29 INFO  : Context for 'APU' is selected.
+12:25:29 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:25:29 INFO  : 'ps7_init' command is executed.
+12:25:29 INFO  : 'ps7_post_config' command is executed.
+12:25:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:25:29 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:25:29 INFO  : 'configparams force-mem-access 0' command is executed.
+12:25:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:25:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:25:30 INFO  : 'con' command is executed.
+12:25:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:25:30 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:26:18 INFO  : Disconnected from the channel tcfchan#7.
+12:26:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:26:19 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:26:19 INFO  : 'jtag frequency' command is executed.
+12:26:19 INFO  : Context for 'APU' is selected.
+12:26:19 INFO  : System reset is completed.
+12:26:22 INFO  : 'after 3000' command is executed.
+12:26:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:26:25 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:26:25 INFO  : Context for 'APU' is selected.
+12:26:25 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:26:25 INFO  : 'configparams force-mem-access 1' command is executed.
+12:26:25 INFO  : Context for 'APU' is selected.
+12:26:25 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:26:25 INFO  : 'ps7_init' command is executed.
+12:26:25 INFO  : 'ps7_post_config' command is executed.
+12:26:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:25 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:26:25 INFO  : 'configparams force-mem-access 0' command is executed.
+12:26:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:26:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:25 INFO  : 'con' command is executed.
+12:26:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:26:25 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:26:52 INFO  : Disconnected from the channel tcfchan#8.
+12:26:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:26:53 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:26:53 INFO  : 'jtag frequency' command is executed.
+12:26:53 INFO  : Context for 'APU' is selected.
+12:26:53 INFO  : System reset is completed.
+12:26:56 INFO  : 'after 3000' command is executed.
+12:26:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:26:59 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:26:59 INFO  : Context for 'APU' is selected.
+12:26:59 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:26:59 INFO  : 'configparams force-mem-access 1' command is executed.
+12:26:59 INFO  : Context for 'APU' is selected.
+12:26:59 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:26:59 INFO  : 'ps7_init' command is executed.
+12:26:59 INFO  : 'ps7_post_config' command is executed.
+12:26:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:59 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:26:59 INFO  : 'configparams force-mem-access 0' command is executed.
+12:26:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:26:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:26:59 INFO  : 'con' command is executed.
+12:26:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:26:59 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+12:36:57 ERROR : (XSDB Server)invalid command name "targetes"
+
+12:42:25 ERROR : (XSDB Server)no hw design specified
+
+12:43:43 ERROR : (XSDB Server)invalid command name "pbadd"
+
+12:44:21 ERROR : (XSDB Server)Already running
+
+12:45:19 ERROR : (XSDB Server)Execution context is running
+
+12:45:28 ERROR : (XSDB Server)Execution context is running
+
+12:45:51 ERROR : (XSDB Server)Execution context is running
+
+12:45:55 ERROR : (XSDB Server)invalid command name "pause"
+
+12:46:37 ERROR : (XSDB Server)Already running
+
+12:46:55 ERROR : (XSDB Server)Execution context is running
+
+12:47:05 ERROR : (XSDB Server)Already running
+
+12:47:30 ERROR : (XSDB Server)Execution context is running
+
+12:47:59 ERROR : (XSDB Server)wrong # of args: should be "mrd [options] address [count]"
+
+12:49:00 ERROR : (XSDB Server)Execution context is running
+
+12:50:32 INFO  : Disconnected from the channel tcfchan#9.
+12:50:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:50:33 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:50:33 INFO  : 'jtag frequency' command is executed.
+12:50:33 INFO  : Context for 'APU' is selected.
+12:50:33 INFO  : System reset is completed.
+12:50:36 INFO  : 'after 3000' command is executed.
+12:50:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:50:39 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:50:39 INFO  : Context for 'APU' is selected.
+12:50:39 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:50:39 INFO  : 'configparams force-mem-access 1' command is executed.
+12:50:39 INFO  : Context for 'APU' is selected.
+12:50:39 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:50:39 INFO  : 'ps7_init' command is executed.
+12:50:39 INFO  : 'ps7_post_config' command is executed.
+12:50:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:50:39 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:50:39 INFO  : 'configparams force-mem-access 0' command is executed.
+12:50:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:50:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:50:39 INFO  : 'con' command is executed.
+12:50:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:50:39 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/systemdebugger_zynqbook_chapter2_app_system_standalone.tcl'
+12:50:54 INFO  : Disconnected from the channel tcfchan#10.
+12:50:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:50:55 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+12:50:55 INFO  : 'jtag frequency' command is executed.
+12:50:55 INFO  : Context for 'APU' is selected.
+12:50:55 INFO  : System reset is completed.
+12:50:58 INFO  : 'after 3000' command is executed.
+12:50:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+12:51:01 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+12:51:01 INFO  : Context for 'APU' is selected.
+12:51:01 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+12:51:01 INFO  : 'configparams force-mem-access 1' command is executed.
+12:51:01 INFO  : Context for 'APU' is selected.
+12:51:01 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+12:51:01 INFO  : 'ps7_init' command is executed.
+12:51:01 INFO  : 'ps7_post_config' command is executed.
+12:51:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:51:01 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:51:01 INFO  : 'configparams force-mem-access 0' command is executed.
+12:51:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:51:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:51:01 INFO  : 'con' command is executed.
+12:51:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:51:01 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+13:27:50 INFO  : Disconnected from the channel tcfchan#11.
+13:27:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:27:51 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+13:27:51 INFO  : 'jtag frequency' command is executed.
+13:27:51 INFO  : Context for 'APU' is selected.
+13:27:51 INFO  : System reset is completed.
+13:27:54 INFO  : 'after 3000' command is executed.
+13:27:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+13:27:57 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+13:27:57 INFO  : Context for 'APU' is selected.
+13:27:57 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+13:27:57 INFO  : 'configparams force-mem-access 1' command is executed.
+13:27:57 INFO  : Context for 'APU' is selected.
+13:27:57 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+13:27:57 INFO  : 'ps7_init' command is executed.
+13:27:57 INFO  : 'ps7_post_config' command is executed.
+13:27:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:27:57 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:27:57 INFO  : 'configparams force-mem-access 0' command is executed.
+13:27:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:27:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:27:57 INFO  : 'con' command is executed.
+13:27:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:27:57 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+13:28:36 INFO  : Disconnected from the channel tcfchan#12.
+13:29:15 INFO  : Checking for BSP changes to sync application flags for project 'zynqbook_chapter2_app'...
+13:29:24 INFO  : Checking for BSP changes to sync application flags for project 'zynqbook_chapter2_app'...
+13:29:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:29:34 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+13:29:34 INFO  : 'jtag frequency' command is executed.
+13:29:34 INFO  : Context for 'APU' is selected.
+13:29:34 INFO  : System reset is completed.
+13:29:37 INFO  : 'after 3000' command is executed.
+13:29:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+13:29:39 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+13:29:39 INFO  : Context for 'APU' is selected.
+13:29:39 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+13:29:39 INFO  : 'configparams force-mem-access 1' command is executed.
+13:29:39 INFO  : Context for 'APU' is selected.
+13:29:39 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+13:29:40 INFO  : 'ps7_init' command is executed.
+13:29:40 INFO  : 'ps7_post_config' command is executed.
+13:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:40 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:29:40 INFO  : 'configparams force-mem-access 0' command is executed.
+13:29:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:40 INFO  : 'con' command is executed.
+13:29:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:29:40 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+13:34:01 INFO  : Disconnected from the channel tcfchan#14.
+13:34:22 INFO  : Launching XSCT server: xsct -n  -interactive /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/temp_xsdb_launch_script.tcl
+13:34:26 INFO  : Platform repository initialization has completed.
+13:34:26 INFO  : Registering command handlers for Vitis TCF services
+13:34:26 INFO  : XSCT server has started successfully.
+13:34:26 INFO  : Successfully done setting XSCT server connection channel  
+13:34:26 INFO  : plnx-install-location is set to ''
+13:34:27 INFO  : Successfully done setting workspace for the tool. 
+13:34:27 INFO  : Successfully done query RDI_DATADIR 
+13:34:52 INFO  : Checking for BSP changes to sync application flags for project 'zynqbook_chapter2_app'...
+13:34:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:34:58 INFO  : Jtag cable 'Digilent Zed 210248469924' is selected.
+13:34:58 INFO  : 'jtag frequency' command is executed.
+13:34:58 INFO  : Context for 'APU' is selected.
+13:34:58 INFO  : System reset is completed.
+13:35:01 INFO  : 'after 3000' command is executed.
+13:35:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}' command is executed.
+13:35:03 INFO  : Device configured successfully with "/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit"
+13:35:03 INFO  : Context for 'APU' is selected.
+13:35:03 INFO  : Hardware design and registers information is loaded from '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa'.
+13:35:03 INFO  : 'configparams force-mem-access 1' command is executed.
+13:35:03 INFO  : Context for 'APU' is selected.
+13:35:03 INFO  : Sourcing of '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl' is done.
+13:35:04 INFO  : 'ps7_init' command is executed.
+13:35:04 INFO  : 'ps7_post_config' command is executed.
+13:35:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:35:04 INFO  : The application '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:35:04 INFO  : 'configparams force-mem-access 0' command is executed.
+13:35:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469924" && level==0 && jtag_device_ctx=="jsn-Zed-210248469924-03727093-0"}
+fpga -file /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/bitstream/zynqbook_chapter2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2/export/zynqbook_chapter2/hw/zynqbook_chapter2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app/Debug/zynqbook_chapter2_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:35:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:35:04 INFO  : 'con' command is executed.
+13:35:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:35:04 INFO  : Launch script is exported to file '/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2/zynqbook_chapter2_app_system/_ide/scripts/debugger_zynqbook_chapter2_app-default.tcl'
+13:46:42 INFO  : Disconnected from the channel tcfchan#1.

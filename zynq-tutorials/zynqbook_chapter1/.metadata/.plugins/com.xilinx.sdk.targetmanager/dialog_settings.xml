@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="zynqbook_chapter1_system-bitFile" value="${project_loc:zynqbook_chapter1}/_ide/bitstream/first_zynq_system_wrapper.bit"/>
+	<item key="zynqbook_chapter1_system-bmmFile" value=""/>
+	<item key="zynqbook_chapter1_system-target" value="Local"/>
+	<item key="zynqbook_chapter1_system-device" value="Auto Detect"/>
+	<item key="zynqbook_chapter1_system-partial_bit" value="false"/>
+	<item key="zynqbook_chapter1_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="zynqbook_chapter1_system"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248469924&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248469924-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248469924-03727093-0&quot;}}]}"/>
+</section>

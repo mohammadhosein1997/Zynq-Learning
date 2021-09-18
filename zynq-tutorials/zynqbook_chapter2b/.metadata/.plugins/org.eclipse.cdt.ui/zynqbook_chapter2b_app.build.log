@@ -1,0 +1,35 @@
+16:43:25 **** Build of configuration Debug for project zynqbook_chapter2b_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/interrupt_counter_tut_2D.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/interrupt_counter_tut_2D.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2b/zynqbook_chapter2b_hw/export/zynqbook_chapter2b_hw/sw/zynqbook_chapter2b_hw/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/interrupt_counter_tut_2D.d" -MT"src/interrupt_counter_tut_2D.o" -o "src/interrupt_counter_tut_2D.o" "../src/interrupt_counter_tut_2D.c"
+../src/interrupt_counter_tut_2D.c: In function 'main':
+../src/interrupt_counter_tut_2D.c:107:32: warning: passing argument 2 of 'XTmrCtr_SetHandler' from incompatible pointer type [-Wincompatible-pointer-types]
+  107 |   XTmrCtr_SetHandler(&TMRInst, TMR_Intr_Handler, &TMRInst);
+      |                                ^~~~~~~~~~~~~~~~
+      |                                |
+      |                                void (*)(void *)
+In file included from ../src/interrupt_counter_tut_2D.c:3:
+/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2b/zynqbook_chapter2b_hw/export/zynqbook_chapter2b_hw/sw/zynqbook_chapter2b_hw/standalone_ps7_cortexa9_0/bspinclude/include/xtmrctr.h:300:64: note: expected 'XTmrCtr_Handler' {aka 'void (*)(void *, unsigned char)'} but argument is of type 'void (*)(void *)'
+  300 | void XTmrCtr_SetHandler(XTmrCtr * InstancePtr, XTmrCtr_Handler FuncPtr,
+      |                                                ~~~~~~~~~~~~~~~~^~~~~~~
+Finished building: ../src/interrupt_counter_tut_2D.c
+ 
+Building target: zynqbook_chapter2b_app.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter2b/zynqbook_chapter2b_hw/export/zynqbook_chapter2b_hw/sw/zynqbook_chapter2b_hw/standalone_ps7_cortexa9_0/bsplib/lib -o "zynqbook_chapter2b_app.elf"  ./src/interrupt_counter_tut_2D.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: zynqbook_chapter2b_app.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size zynqbook_chapter2b_app.elf  |tee "zynqbook_chapter2b_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30862	   1968	  22688	  55518	   d8de	zynqbook_chapter2b_app.elf
+Finished building: zynqbook_chapter2b_app.elf.size
+ 
+
+16:43:26 Build Finished (took 1s.5ms)
+
