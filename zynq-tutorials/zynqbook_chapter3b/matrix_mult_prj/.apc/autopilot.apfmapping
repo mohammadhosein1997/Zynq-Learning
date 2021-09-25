@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="matrix_mult.h" path="/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3b/matrix_mult.h"/>
+    <originFiles name="matrix_mult.cpp" path="/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3b/matrix_mult.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="matrix_mult_test.cpp" path="/home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3b/matrix_mult_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

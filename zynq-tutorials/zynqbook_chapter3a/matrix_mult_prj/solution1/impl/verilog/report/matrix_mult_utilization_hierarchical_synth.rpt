@@ -1,0 +1,32 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
+| Date         : Sun Sep 19 17:29:23 2021
+| Host         : zynquser-PC running 64-bit Ubuntu 20.04.2 LTS
+| Command      : report_utilization -hierarchical -hierarchical_depth 5 -file ./report/matrix_mult_utilization_hierarchical_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020clg484-1
+| Design State : Synthesized
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|             Instance             |                       Module                       | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| bd_0_wrapper                     |                                              (top) |        140 |        140 |       0 |    0 | 100 |      0 |      0 |          0 |
+|   bd_0_i                         |                                               bd_0 |        140 |        140 |       0 |    0 | 100 |      0 |      0 |          0 |
+|     hls_inst                     |                                    bd_0_hls_inst_0 |        140 |        140 |       0 |    0 | 100 |      0 |      0 |          0 |
+|       inst                       |                        bd_0_hls_inst_0_matrix_mult |        140 |        140 |       0 |    0 | 100 |      0 |      0 |          0 |
+|         (inst)                   |                        bd_0_hls_inst_0_matrix_mult |        108 |        108 |       0 |    0 |  99 |      0 |      0 |          0 |
+|         flow_control_loop_pipe_U | bd_0_hls_inst_0_matrix_mult_flow_control_loop_pipe |         32 |         32 |       0 |    0 |   1 |      0 |      0 |          0 |
++----------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'matrix_mult' consists of the following:&#x9;'add' operation ('add_ln16_2', matrix_mult.cpp:16) [58]  (1.78 ns)&#xA;&#x9;'getelementptr' operation ('a_addr', matrix_mult.cpp:16) [60]  (0 ns)&#xA;&#x9;'load' operation ('a_load', matrix_mult.cpp:16) on array 'a' [68]  (2.32 ns)&#xA;&#xA;&#xA;Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-1016.html" projectName="matrix_mult_prj" solutionName="solution2" date="2021-09-19T18:34:48.401+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (4.102ns) exceeds the target (target clock period: 5ns, clock uncertainty: 1.35ns, effective delay budget: 3.65ns).&#xA;Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-871.html" projectName="matrix_mult_prj" solutionName="solution2" date="2021-09-19T18:34:48.365+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'matrix_mult' (loop 'Row_Col_Product'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('empty_write_ln16', matrix_mult.cpp:16) of variable 'add_ln16', matrix_mult.cpp:16 on local variable 'empty' and 'load' operation ('p_load', matrix_mult.cpp:12) on local variable 'empty'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-880.html" projectName="matrix_mult_prj" solutionName="solution1" date="2021-09-19T18:33:44.183+0900" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

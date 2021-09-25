@@ -1,11 +1,12 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-Default
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-Default
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2_app-Default/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2_app-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2_app-GDB/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-Default/activeLaunchMode=embrun
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_zynqbook_chapter2b_app-GDB/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_zynqbook_chapter2_app_system/activeLaunchMode=systemrun

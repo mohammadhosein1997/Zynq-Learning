@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Sep 19 17:25:40 2021
+# Process ID: 12299
+# Current directory: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl
+# Command line: wbtcv -mode batch -source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/xsim.dir/matrix_mult/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/webtalk.log
+# Journal file: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/webtalk.jou
+#-----------------------------------------------------------
+source /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/xsim.dir/matrix_mult/webtalk/xsim_webtalk.tcl -notrace

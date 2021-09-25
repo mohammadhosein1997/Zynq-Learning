@@ -1,4 +1,4 @@
-16:43:25 **** Build of configuration Debug for project zynqbook_chapter2b_app ****
+18:03:18 **** Incremental Build of configuration Debug for project zynqbook_chapter2b_app ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -31,5 +31,5 @@ arm-none-eabi-size zynqbook_chapter2b_app.elf  |tee "zynqbook_chapter2b_app.elf.
 Finished building: zynqbook_chapter2b_app.elf.size
  
 
-16:43:26 Build Finished (took 1s.5ms)
+18:03:18 Build Finished (took 638ms)
 

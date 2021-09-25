@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Sep 19 17:25:42 2021
+# Process ID: 12337
+# Current directory: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl
+# Command line: xsim -mode tcl -source {xsim.dir/matrix_mult/xsim_script.tcl}
+# Log file: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/xsim.log
+# Journal file: /home/zynq-user/Industri-University_Course/Git/Zynq-Learning/zynq-tutorials/zynqbook_chapter3a/matrix_mult_prj/solution1/sim/vhdl/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/matrix_mult/xsim_script.tcl
+source matrix_mult.tcl
