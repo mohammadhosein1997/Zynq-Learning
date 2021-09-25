@@ -65,7 +65,18 @@ begin
     --
     -- This process describes the combinational logic of the FSM 
     --
-    process (all)
+    process 
+    (
+        -- Input signals binary_read
+        start,
+        din,
+        
+        -- State signals 
+        state,
+        value,
+        previous_value,
+        i
+    )
         variable temp0, temp1   : unsigned(width - 1 downto 0);
     begin 
 
@@ -75,6 +86,7 @@ begin
         busy <= '0';
 
         value_next <= value;
+        next_state <= state;
         previous_value_next <= previous_value;
         i_next <= i;
 
